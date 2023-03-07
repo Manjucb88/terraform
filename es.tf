@@ -1,6 +1,9 @@
 resource "aws_elasticsearch_domain" "es" {
   domain_name           = "newdomain"
   elasticsearch_version = "7.10"
+  encrypt_at_rest {
+    enabled = true
+  }
 
   cluster_config {
     instance_type = "r4.large.elasticsearch"
