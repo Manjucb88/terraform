@@ -1,6 +1,12 @@
 resource "aws_elasticsearch_domain" "es" {
   domain_name           = "newdomain"
   elasticsearch_version = "7.10"
+  domain_endpoint_options {
+    enforce_https = true
+  }
+  node_to_node_encryption {
+    enabled = true
+  }
   encrypt_at_rest {
     enabled = true
   }
