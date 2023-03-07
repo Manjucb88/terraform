@@ -1,4 +1,5 @@
 resource "aws_db_instance" "default" {
+ storage_encrypted = true
  identifier                = "test"
   engine            = "mysql"
   engine_version    = "5.7.25"
